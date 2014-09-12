@@ -1,0 +1,13 @@
+public class Main {
+
+	public static void main(String[] args) {
+		Solution s = new Solution();
+		int[] a = { 1 };
+		int[] b = { 2 };
+		System.out.println(s.findMedianSortedArrays(a, b));
+		int[] c = { 123, 456, 888 };
+		int[] d = { 1 };
+		System.out.println(s.findMedianSortedArrays(c, d));
+	}
+
+}

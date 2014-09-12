@@ -1,0 +1,26 @@
+public class Solution {
+	public double findMedianSortedArrays(int A[], int B[]) {
+		int count = A.length + B.length;
+		int target = count / 2;
+		int i = 0, j = 0;
+		int current = 0;
+		int result = 0;
+		while (current <= target && (i < A.length || j < B.length)) {
+			if (i >= A.length) {
+				result = B[j];
+				j++;
+			} else if (j >= B.length) {
+				result = A[i];
+				i++;
+			} else if (A[i] < A[j]) {
+				result = B[j];
+				j++;
+			} else {
+				result = A[i];
+				i++;
+			}
+			current++;
+		}
+		return result;
+	}
+}

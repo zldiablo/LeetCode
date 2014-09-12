@@ -1,0 +1,7 @@
+public class Solution {
+	public double findMedianSortedArrays(int A[], int B[]) {
+		int count = A.length + B.length;
+		int target = count/2;
+		return 0;
+	}
+}
