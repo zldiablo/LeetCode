@@ -9,6 +9,7 @@ public class Solution {
 		}
 		sumMap = new HashMap<Integer, List<List<Integer>>>();
 		List<Integer> path = new LinkedList<Integer>();
+		sumMap.put(sum, new LinkedList<List<Integer>>());
 		generatePaths(root, sum, path);
 		return sumMap.get(sum);
 	}
@@ -21,19 +22,19 @@ public class Solution {
 				r += e;
 			}
 			if (r == sum) {
-				if (!sumMap.containsKey(sum)) {
-					sumMap.put(sum, new LinkedList<List<Integer>>());
-				}
 				List<List<Integer>> current = sumMap.get(sum);
-				current.add(path);
+				List<Integer> p = new LinkedList<Integer>();
+				p.addAll(path);
+				current.add(p);
 			}
-			return;
 		}
+		
 		if (root.left != null) {
 			generatePaths(root.left, sum, path);
 		}
 		if (root.right != null) {
 			generatePaths(root.right, sum, path);
 		}
+		path.remove(path.size()-1);
 	}
 }

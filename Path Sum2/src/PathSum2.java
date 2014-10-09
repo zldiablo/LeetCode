@@ -13,6 +13,7 @@ public class PathSum2 {
 		TreeNode n7 = new TreeNode(7);
 		TreeNode n8 = new TreeNode(2);
 		TreeNode n9 = new TreeNode(1);
+		TreeNode n10 = new TreeNode(5);
 		
 		n1.left = n2;
 		n1.right = n3;
@@ -22,9 +23,12 @@ public class PathSum2 {
 		n4.left = n7;
 		n4.right = n8;
 		n6.right = n9;
+		n6.left = n10;
 		
 		Solution s = new Solution();
 		List<List<Integer>> result = s.pathSum(n1, 22);
+		System.out.println(result.size());
+		result = s.pathSum(n1, 122);
 		System.out.println(result.size());
 	}
 
