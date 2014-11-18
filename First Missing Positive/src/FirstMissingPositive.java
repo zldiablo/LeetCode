@@ -10,6 +10,8 @@ public class FirstMissingPositive {
 		int[] t5 = {3};
 		int[] t6 = {2,2};
 		int[] t7 = {1,0};
+		int[] t8 = {1,2};
+		int[] t9 = {0,1,0};
 		
 		System.out.println(s.firstMissingPositive(t1));
 		System.out.println(s.firstMissingPositive(t2));
@@ -18,6 +20,8 @@ public class FirstMissingPositive {
 		System.out.println(s.firstMissingPositive(t5));
 		System.out.println(s.firstMissingPositive(t6));
 		System.out.println(s.firstMissingPositive(t7));
+		System.out.println(s.firstMissingPositive(t8));
+		System.out.println(s.firstMissingPositive(t9));
 	}
 
 }
