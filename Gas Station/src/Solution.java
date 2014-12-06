@@ -6,24 +6,18 @@ public class Solution {
 			diff[i] = gas[i] - cost[i];
 		}
 
-		int sum = 0;
-		boolean found = false;
-		int savedIndex = 0;
-		for (int i = 0; i < diff.length; i++) {
-			sum += diff[i];
-			if (!found) {
-				savedIndex = i;
-				found = true;
-			}
-			if (sum < 0 && diff[i] < 0) {
-				found = false;
+		int start = gas.length - 1;
+		int end = 0;
+		int sum = diff[start];
+		while (start > end) {
+			if (sum >= 0) {
+				sum += diff[end];
+				++end;
+			} else {
+				--start;
+				sum += diff[start];
 			}
 		}
-
-		if (sum < 0) {
-			return -1;
-		} else {
-			return savedIndex;
-		}
+		return sum >= 0 ? start : -1;
 	}
 }
